@@ -9,7 +9,7 @@ public class Board {
     private Piece[][] pieces;
 
     public Board(int rows, int columns) {
-        if (rows < 0 && rows > 8 && columns < 0 && columns > 8) { throw new BoardException("Invalid board dimensions!"); }
+        if (rows < 1 || columns < 1 || rows > 8 || columns > 8) { throw new BoardException("Invalid board dimensions!"); }
         
         this.rows = rows;
         this.columns = columns;
@@ -36,7 +36,7 @@ public class Board {
     }
 
     public void placePiece(Piece piece, Position position) {
-        if (thereIsAPiece(position)) { throw new BoardException("Already have a piece in this position: " + position.toString()); }
+        if (thereIsAPiece(position)) { throw new BoardException("Already have a piece in this position: " + position); }
         
         pieces[position.getRow()][position.getColumn()] = piece;
         piece.position = position;
