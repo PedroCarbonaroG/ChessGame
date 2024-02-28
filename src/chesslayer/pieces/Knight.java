@@ -9,4 +9,10 @@ public class Knight extends ChessPiece {
     public Knight(Board board, Color color) {
         super(board, color);
     }
+
+    @Override
+    public boolean[][] possibleMoves() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'possibleMoves'");
+    }
 }

@@ -6,7 +6,7 @@ import boardlayer.Position;
 
 import chesslayer.enums.Color;
 
-public class ChessPiece extends Piece {
+public abstract class ChessPiece extends Piece {
     private Color color;
     private int moveCount;
 
@@ -20,18 +20,16 @@ public class ChessPiece extends Piece {
     }
 
     public ChessPosition getChessPosition() {
-
+        return null;
     }
 
     protected boolean isThereOpponentPiece(Position position) {
-
+        return false;
     }
 
     protected void increaseMoveCount() {
-
     }
 
     protected void decreaseMoveCount() {
-
     }
 }
