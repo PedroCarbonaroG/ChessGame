@@ -27,10 +27,11 @@ public class Board {
     }
 
     public Piece piece(int row, int columns) {
+        return pieces[row][columns];
     }
 
     public Piece piece(Position position) {
-
+        return pieces[position.getRow()][position.getColumn()];
     }
 
     public void placePiece(Piece piece, Position position) {
