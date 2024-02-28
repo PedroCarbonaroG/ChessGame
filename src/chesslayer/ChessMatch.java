@@ -1,7 +1,11 @@
 package chesslayer;
 
 import boardlayer.Board;
+import boardlayer.Position;
 import chesslayer.enums.Color;
+
+import chesslayer.pieces.King;
+import chesslayer.pieces.Rook;
 
 public class ChessMatch {
     
@@ -16,6 +20,11 @@ public class ChessMatch {
 
     public ChessMatch() {
         board = new Board(8, 8);
+        initialSetup();
+    }
+
+    private void initialSetup() {
+        board.placePiece(new Rook(board, Color.WHITE), new Position(2, 1));
     }
 
     public ChessPiece[][] getPieces() {
