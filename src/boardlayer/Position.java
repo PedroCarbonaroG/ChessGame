@@ -1,4 +1,4 @@
-package boardgame;
+package boardlayer;
 
 public class Position {
     private int row;
@@ -23,6 +23,10 @@ public class Position {
     }
     public void setRow(int row) {
         this.row = row;
+    }
+
+    public void setValues(int row, int column) {
+
     }
 
     @Override

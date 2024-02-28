@@ -1,4 +1,4 @@
-package boardgame;
+package boardlayer;
 
 public class Piece {
     protected Position position;
@@ -13,5 +13,15 @@ public class Piece {
         return board;
     }
 
-     
+    public boolean[][] possibleMoves() {
+
+    }
+
+    public boolean possibleMove(Position position) {
+
+    }
+
+    public boolean isThereAnyPossibleMove() {
+
+    }
 }
