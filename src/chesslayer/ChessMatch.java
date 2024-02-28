@@ -3,6 +3,7 @@ package chesslayer;
 import boardlayer.Board;
 import boardlayer.Piece;
 import boardlayer.Position;
+
 import chesslayer.enums.Color;
 import chesslayer.exceptions.ChessException;
 import chesslayer.pieces.King;
@@ -55,7 +56,9 @@ public class ChessMatch {
     }
 
     public boolean[][] possibleMoves(ChessPosition sourcePosition) {
-        return null;
+        Position position = sourcePosition.toPosition();
+        validateSourePosition(position);
+        return board.piece(position).possibleMoves();
     }
 
     public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition) {
