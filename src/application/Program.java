@@ -18,7 +18,7 @@ public class Program {
 
     public static void main(String[] args) {
 
-        while (true) {
+        while (!chessMatch.getCheckMate()) {
             try {
                 UI.clearScreen();
                 UI.printMatch(chessMatch, capturedPieces);
@@ -38,5 +38,8 @@ public class Program {
             catch (ChessException e) { System.out.print(e.getMessage() + ", Press enter to do other move."); sc.nextLine(); }
             catch (InputMismatchException e) { System.out.print(e.getMessage() + ", Press enter to do other move."); sc.nextLine(); }
         }
+
+        UI.clearScreen();
+        UI.printMatch(chessMatch, capturedPieces);
     }
 }
