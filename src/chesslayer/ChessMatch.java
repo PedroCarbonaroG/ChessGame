@@ -1,5 +1,8 @@
 package chesslayer;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import boardlayer.Board;
 import boardlayer.Piece;
 import boardlayer.Position;
@@ -17,6 +20,9 @@ public class ChessMatch {
     private boolean checkMate;
     private ChessPiece enPassantVulnerable;
     private ChessPiece promoted;
+
+    private List<Piece> piecesOnTheBoard = new ArrayList<>();
+    private List<Piece> capturedPieces = new ArrayList<>();
 
     private Board board;
 
@@ -52,6 +58,7 @@ public class ChessMatch {
 
     private void placeNewPiece(char column, int row, ChessPiece chessPiece) {
         board.placePiece(chessPiece, new ChessPosition(column, row).toPosition());
+        piecesOnTheBoard.add(chessPiece);
     }
 
     private void nextTurn() {
@@ -89,8 +96,12 @@ public class ChessMatch {
     private Piece makeMove(Position source, Position target) {
         Piece p = board.removePiece(source);
         Piece capturedPiece = board.removePiece(target);
-
         board.placePiece(p, target);
+
+        if (capturedPiece != null) {
+            piecesOnTheBoard.remove(capturedPiece);
+            capturedPieces.add(capturedPiece);
+        }
 
         return capturedPiece;
     }
