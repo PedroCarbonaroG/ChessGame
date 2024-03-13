@@ -308,7 +308,7 @@ public class ChessMatch {
         if (promoted == null) {
             throw new IllegalStateException("There is no piece to be promoted!");
         }
-
+        
         if (!type.equals("B") && !type.equals("N") && !type.equals("R") && !type.equals("Q")) {
             return promoted;
         }
